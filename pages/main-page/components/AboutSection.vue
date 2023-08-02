@@ -6,7 +6,7 @@
         <div class="about-main__description" v-html="aboutData.description"/>
       </div>
       <div class="about-main__images">
-        <nuxt-img
+        <img
             src="https://storage.yandexcloud.net/matetech-prod-file-storage/411356/atom_5697f8ee77c8494cec840fd4bbd4695c.webp"
             alt="ЦО Коалиция"
             class="about-main__atom"

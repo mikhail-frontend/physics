@@ -1,12 +1,12 @@
 <template>
   <section class="main-banner">
-    <nuxt-img
+    <img
         src="https://storage.yandexcloud.net/matetech-prod-file-storage/411354/triangle_0f1812592ace404ce217be909ac5b958.png"
         alt="ЦО Коалиция"
         format="webp"
         class="main-banner__triangle"
     />
-    <nuxt-img
+    <img
         src="https://storage.yandexcloud.net/matetech-prod-file-storage/411355/sphere_0f1812592ace404ce217be909ac5b958.png"
         alt="ЦО Коалиция"
         format="webp"
