@@ -5,8 +5,50 @@
   justify-content: center;
   align-items: center;
   align-self: stretch;
-  background: linear-gradient(180deg, #2F394D 0%, #14172B 100%);
-  font-family: 'Golos Text', sans-serif !important;
+  background-image:
+          url("data:image/svg+xml,%3Csvg width='1600' height='526' viewBox='0 0 1600 526' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.6' d='M-92.3338 -157.396L-372.475 78.5839C-387.733 91.4368 -393.675 112.257 -387.5 131.227L-242.67 576.13C-237.193 592.955 -223.071 605.52 -205.724 609.003L178.567 686.177C193.197 689.115 208.369 685.226 219.783 675.612L498.873 440.516C514.593 427.275 520.378 405.63 513.361 386.312L349.235 -65.5638C343.365 -81.7274 329.45 -93.6305 312.572 -96.927L-51.3724 -168.012C-65.9291 -170.855 -80.9902 -166.952 -92.3338 -157.396Z' fill='url(%23paint0_linear_303_8333)'/%3E%3Cpath opacity='0.6' d='M1474.4 -48.8192L1196.11 178.647C1184.27 188.322 1179.42 204.172 1183.82 218.814L1301.55 610.777C1305.76 624.8 1317.69 635.132 1332.17 637.302L1692.3 691.279C1702.85 692.861 1713.58 689.912 1721.84 683.159L1999.25 456.413C2011.48 446.416 2016.21 429.87 2011.12 414.918L1875.63 17.621C1871.04 4.17156 1859.3 -5.57243 1845.24 -7.60538L1503.75 -56.9682C1493.26 -58.4849 1482.61 -55.5285 1474.4 -48.8192Z' fill='url(%23paint1_linear_303_8333)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_303_8333' x1='174.075' y1='-105.285' x2='150.652' y2='377.053' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%233B4367'/%3E%3Cstop offset='1' stop-color='%23232531' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_303_8333' x1='1267.73' y1='38.7976' x2='1654.77' y2='436.815' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%233B4361'/%3E%3Cstop offset='1' stop-color='%23222639' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"),
+          linear-gradient(180deg, #2F394D 0%, #14172B 100%);
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, center;
+  font-family: 'Golos Text', sans-serif;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: 1300px) {
+    background-image: url("data:image/svg+xml,%3Csvg width='1200' height='526' viewBox='0 0 1200 526' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.6' d='M-82.3338 -157.396L-362.475 78.5839C-377.733 91.4368 -383.675 112.257 -377.5 131.227L-232.67 576.13C-227.193 592.955 -213.071 605.52 -195.724 609.003L188.567 686.177C203.197 689.115 218.369 685.226 229.783 675.612L508.873 440.516C524.593 427.275 530.378 405.63 523.361 386.312L359.235 -65.5638C353.365 -81.7274 339.45 -93.6305 322.572 -96.927L-41.3724 -168.012C-55.9291 -170.855 -70.9902 -166.952 -82.3338 -157.396Z' fill='url(%23paint0_linear_303_9190)'/%3E%3Cpath opacity='0.6' d='M1214.4 -48.8192L936.106 178.647C924.269 188.322 919.42 204.172 923.818 218.814L1041.55 610.777C1045.76 624.8 1057.69 635.132 1072.17 637.302L1432.3 691.279C1442.85 692.861 1453.58 689.912 1461.84 683.159L1739.25 456.413C1751.48 446.416 1756.21 429.87 1751.12 414.918L1615.63 17.621C1611.04 4.17156 1599.3 -5.57243 1585.24 -7.60538L1243.75 -56.9682C1233.26 -58.4849 1222.61 -55.5285 1214.4 -48.8192Z' fill='url(%23paint1_linear_303_9190)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_303_9190' x1='184.075' y1='-105.285' x2='160.652' y2='377.053' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%233B4367'/%3E%3Cstop offset='1' stop-color='%23232531' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_303_9190' x1='1007.73' y1='38.7976' x2='1394.77' y2='436.815' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%233B4361'/%3E%3Cstop offset='1' stop-color='%23222639' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"),
+    linear-gradient(180deg, #2F394D 0%, #14172B 100%);
+  }
+  @media (max-width: 1100px) {
+    background-image: url("data:image/svg+xml,%3Csvg width='992' height='526' viewBox='0 0 992 526' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.6' d='M-92.3338 -157.396L-372.475 78.5839C-387.733 91.4368 -393.675 112.257 -387.5 131.227L-242.67 576.13C-237.193 592.955 -223.071 605.52 -205.724 609.003L178.567 686.177C193.197 689.115 208.369 685.226 219.783 675.612L498.873 440.516C514.593 427.275 520.378 405.63 513.361 386.312L349.235 -65.5638C343.365 -81.7274 329.45 -93.6305 312.572 -96.927L-51.3724 -168.012C-65.9291 -170.855 -80.9902 -166.952 -92.3338 -157.396Z' fill='url(%23paint0_linear_303_8636)'/%3E%3Cpath opacity='0.6' d='M984.401 -48.8192L706.106 178.647C694.269 188.322 689.42 204.172 693.818 218.814L811.552 610.777C815.764 624.8 827.691 635.132 842.171 637.302L1202.3 691.279C1212.85 692.861 1223.58 689.912 1231.84 683.159L1509.25 456.413C1521.48 446.416 1526.21 429.87 1521.12 414.918L1385.63 17.621C1381.04 4.17156 1369.3 -5.57243 1355.24 -7.60538L1013.75 -56.9682C1003.26 -58.4849 992.61 -55.5285 984.401 -48.8192Z' fill='url(%23paint1_linear_303_8636)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_303_8636' x1='174.075' y1='-105.285' x2='150.652' y2='377.053' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%233B4367'/%3E%3Cstop offset='1' stop-color='%23232531' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_303_8636' x1='777.73' y1='38.7976' x2='1164.77' y2='436.815' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%233B4361'/%3E%3Cstop offset='1' stop-color='%23222639' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"),
+    linear-gradient(180deg, #2F394D 0%, #14172B 100%);
+  }
+  @media (max-width: 800px) {
+    background-image: linear-gradient(180deg, #2F394D 0%, #14172B 100%);
+  }
+
+  * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 917px;
+    height: 286px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 106px;
+    background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411349/stars_f474a519ed4105ef300139d8815ba324.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @media (max-width: 1100px) {
+      background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411350/stars-tablet_461a0b9a4877f89acc9091efc192fc71.webp');
+    }
+  }
 }
 
 .main-banner__date {
