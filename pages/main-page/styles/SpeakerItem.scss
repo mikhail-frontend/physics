@@ -4,6 +4,10 @@
   align-items: flex-start;
   gap: 32px;
   flex: 1 0 0;
+  @media (max-width: 600px) {
+    justify-content: center;
+    align-items: center;
+  }
 }
 .speaker__image{
   width: 172px;
