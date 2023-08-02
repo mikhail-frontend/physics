@@ -57,3 +57,87 @@
     width: 100%;
   }
 }
+
+.about-main__images{
+  position: relative;
+  @media (max-width: 800px){
+    position: static;
+  }
+}
+
+.about-main__atom{
+  width: 276px;
+  height: 276px;
+  object-fit: contain;
+  position: relative;
+  right: 7.5px;
+  top: -33px;
+  @media (max-width: 1300px) {
+    right: 25.689px;
+    top: -33.167px;
+  }
+  @media (max-width: 1100px) {
+    right: 18px;
+    top: -33px;
+  }
+  @media (max-width: 800px){
+    right: -118px;
+    top: -27px;
+    position: absolute;
+  }
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+
+.about-main__sphere-big {
+  position: absolute;
+  right: -74px;
+  top: -42px;
+  width: 86px;
+  height: 87px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='87' viewBox='0 0 86 87' fill='none'%3E%3Cpath d='M43 86.1033C66.7482 86.1033 86 66.8515 86 43.1033C86 19.355 66.7482 0.103271 43 0.103271C19.2518 0.103271 0 19.355 0 43.1033C0 66.8515 19.2518 86.1033 43 86.1033Z' fill='url(%23paint0_radial_303_8366)'/%3E%3Cdefs%3E%3CradialGradient id='paint0_radial_303_8366' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(33.5427 26.6971) scale(48.6994)'%3E%3Cstop offset='0.02' stop-color='%23FBF3FC'/%3E%3Cstop offset='0.26' stop-color='%23E5E6FC'/%3E%3Cstop offset='0.55' stop-color='%23C6D3FD'/%3E%3Cstop offset='1' stop-color='%23A4BDFC'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @media (max-width: 1300px) {
+    right: -66px;
+    top: -43.897px;
+  }
+  @media (max-width: 1100px) {
+    right: -74px;
+    top: -43.897px;
+  }
+  @media (max-width: 800px) {
+    display: none;
+  }
+
+}
+
+.about-main__sphere-small {
+  position: absolute;
+  right: 310px;
+  bottom: 51px;
+  width: 49px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='49' height='50' viewBox='0 0 49 50' fill='none'%3E%3Cpath d='M24.5 49.1033C38.031 49.1033 49 38.1342 49 24.6033C49 11.0723 38.031 0.103271 24.5 0.103271C10.969 0.103271 0 11.0723 0 24.6033C0 38.1342 10.969 49.1033 24.5 49.1033Z' fill='url(%23paint0_radial_303_8367)'/%3E%3Cdefs%3E%3CradialGradient id='paint0_radial_303_8367' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(19.1115 15.2556) scale(27.7473)'%3E%3Cstop offset='0.02' stop-color='%23FBF3FC'/%3E%3Cstop offset='0.26' stop-color='%23E5E6FC'/%3E%3Cstop offset='0.55' stop-color='%23C6D3FD'/%3E%3Cstop offset='1' stop-color='%23A4BDFC'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @media (max-width: 1300px) {
+    right: 361px;
+    bottom: 51px;
+  }
+  @media (max-width: 1100px) {
+    right: 353px;
+    bottom: 80px;
+  }
+  @media (max-width: 800px) {
+    right: 179px;
+    bottom: 187px;
+  }
+  @media (max-width: 600px) {
+    display: none;
+  }
+}

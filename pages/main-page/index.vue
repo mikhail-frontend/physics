@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="physics-main">
     <main-banner/>
     <about-section/>
   </main>
