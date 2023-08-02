@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <main>
     <main-banner/>
     <about-section/>
-  </div>
+  </main>
 </template>
 <script lang="ts">
 import {Component, Vue} from "nuxt-property-decorator";
