@@ -1,0 +1,38 @@
+.speaker{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  flex: 1 0 0;
+}
+.speaker__image{
+  width: 172px;
+  height: 172px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.speaker__name{
+  color: #0D1834;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px;
+}
+
+.speaker__extra{
+  color: #735CFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px;
+  margin-bottom: 20px;
+}
+
+.speaker__description{
+  color: #5B697F;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 162.5% */
+}
