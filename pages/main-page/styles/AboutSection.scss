@@ -1,11 +1,12 @@
-.about-section{
+.about-section {
   padding: 60px 0;
   font-family: 'Golos Text', sans-serif;
   @media (max-width: 800px) {
     padding: 40px 0;
   }
 }
-.about-section__main{
+
+.about-section__main {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -15,7 +16,8 @@
     margin-bottom: 40px;
   }
 }
-.about-main__content{
+
+.about-main__content {
   width: 694px;
   max-width: 100%;
   @media (max-width: 1100px) {
@@ -25,7 +27,8 @@
     width: 100%;
   }
 }
-.about-main__title{
+
+.about-main__title {
   color: #0D1834;
   font-size: 38px;
   font-style: normal;
@@ -48,7 +51,8 @@
     margin-bottom: 24px;
   }
 }
-.about-main__description{
+
+.about-main__description {
   color: #282047;
   font-size: 18px;
   font-style: normal;
@@ -60,14 +64,14 @@
   }
 }
 
-.about-main__images{
+.about-main__images {
   position: relative;
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     position: static;
   }
 }
 
-.about-main__atom{
+.about-main__atom {
   width: 276px;
   height: 276px;
   object-fit: contain;
@@ -82,7 +86,7 @@
     right: 18px;
     top: -33px;
   }
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     right: -118px;
     top: -27px;
     position: absolute;
@@ -144,26 +148,97 @@
   }
 }
 
-.about-section__whom{
+.about-section__whom {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 16px;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-.about-whom__block{
-  display: flex;
+.about-whom__block {
   padding: 56px 32px;
+  flex: 1 0 0;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #F8F8FF 0%, #E8EBF7 100%);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+
+  &:first-of-type {
+    .whom-block__link {
+      margin-top: 65px;
+      @media (max-width: 1100px) {
+        margin-top: 45px;
+      }
+    }
+
+    .about-whom__block-image {
+      width: 191px;
+      height: 206px;
+      @media (max-width: 600px) {
+        width: 129.806px;
+        height: 140px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .whom-block__description {
+        max-width: 542px;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    .about-whom__block-image {
+      width: 235px;
+      height: 224px;
+      @media (max-width: 600px) {
+        width: 161px;
+        height: 153.175px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .whom-block__description {
+        max-width: 558px;
+      }
+    }
+  }
+
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    gap: 60px;
+    padding: 46px 32px;
+  }
+  @media (max-width: 800px) {
+    gap: 32px;
+  }
+
+  @media (max-width: 600px) {
+    gap: 24px;
+    flex-direction: column-reverse;
+    padding: 24px 32px 40px 32px;
+  }
+
+}
+
+.about-whom__block-content {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  flex: 1 0 0;
   align-self: stretch;
-  border-radius: 10px;
-  background: linear-gradient(160deg, #F8F8FF 0%, #E8EBF7 100%);
+  @media (max-width: 1100px) {
+    flex: 1;
+  }
 }
 
-
-.whom-block__title{
+.whom-block__title {
   color: #0D1834;
   font-size: 30px;
   font-style: normal;
@@ -171,9 +246,17 @@
   line-height: 39px;
   margin-bottom: 19px;
   max-width: 298px;
+  @media (max-width: 1100px) {
+    max-width: 100%;
+  }
+  @media (max-width: 600px) {
+    font-size: 24px;
+    line-height: 39px;
+    margin-bottom: 8px;
+  }
 }
 
-.whom-block__description{
+.whom-block__description {
   color: #5B697F;
   font-family: 'Manrope', sans-serif;
   font-size: 18px;
@@ -184,7 +267,7 @@
   max-width: 274px;
 }
 
-.whom-block__link{
+.whom-block__link {
   display: flex;
   padding: 12px 25px;
   justify-content: center;
@@ -199,7 +282,20 @@
   border-radius: 12px;
   background: #735CFF;
   transition: .3s ease;
-  &:hover{
+  margin-top: 53px;
+
+  &:hover {
     transform: scale(1.03);
   }
+
+  @media (max-width: 1100px) {
+    margin-top: 45px;
+  }
+  @media (max-width: 600px) {
+    margin-top: 32px !important;
+  }
+}
+
+.about-whom__block-image {
+  object-fit: contain;
 }
