@@ -1,0 +1,40 @@
+.speakers-section{
+  padding: 60px 0;
+  font-family: 'Golos Text', sans-serif;
+  @media (max-width: 800px) {
+    padding: 40px 0;
+  }
+}
+
+.speakers-section__header{
+  color: #142039;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.96px;
+  max-width: 509px;
+  margin-bottom: 32px;
+}
+
+.speakers-section__heading{
+  color: #142039;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.76px;
+  margin-bottom: 19px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  &:before{
+    content: '';
+    display: block;
+    background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411379/one-star_5756e90d442293809d7ce2c7ca479d2e.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 29px;
+    height: 29px;
+  }
+}

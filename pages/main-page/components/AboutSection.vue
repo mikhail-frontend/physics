@@ -20,7 +20,7 @@
     <div class="about-section__whom">
       <div class="about-whom__block" v-for="block in aboutData.blocks" :key="block.id">
         <div class="about-whom__block-content">
-          <h4 class="whom-block__title" v-html="block.title"/>
+          <div class="whom-block__title" v-html="block.title"/>
           <div class="whom-block__description" v-html="block.description"/>
           <nuxt-link class="whom-block__link"
                      :to="block.button_link"
