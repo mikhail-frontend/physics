@@ -1,5 +1,17 @@
 <template>
   <section class="main-banner">
+    <nuxt-img
+        src="https://storage.yandexcloud.net/matetech-prod-file-storage/411354/triangle_0f1812592ace404ce217be909ac5b958.png"
+        alt="ЦО Коалиция"
+        format="webp"
+        class="main-banner__triangle"
+    />
+    <nuxt-img
+        src="https://storage.yandexcloud.net/matetech-prod-file-storage/411355/sphere_0f1812592ace404ce217be909ac5b958.png"
+        alt="ЦО Коалиция"
+        format="webp"
+        class="main-banner__sphere"
+    />
     <div class="main-banner__date">17 сентября 2023</div>
     <h1 class="main-banner__title">Всероссийский день&nbsp;физики</h1>
     <div class="main-banner__description">

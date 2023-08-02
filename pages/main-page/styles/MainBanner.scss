@@ -47,6 +47,20 @@
     background-position: center center;
     @media (max-width: 1100px) {
       background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411350/stars-tablet_461a0b9a4877f89acc9091efc192fc71.webp');
+      left: calc(50% + 20px);
+    }
+    @media (max-width: 800px) {
+      background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411352/stars-vert-tab_0ab833447ff5df3199e7936401db295b.webp');
+      left: 50%;
+      top: 110px;
+    }
+    @media (max-width: 600px) {
+      background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411353/stars-mobile_1627dfbef88eb464a55588ecc2bcd2f6.webp');
+      left: 10px;
+      top: 155px;
+      transform: none;
+      height: 254px;
+      width: 363px;
     }
   }
 }
@@ -137,6 +151,7 @@
   justify-content: center;
   cursor: pointer;
   transition: .3s ease;
+  white-space: nowrap;
 
   &:hover {
     transform: scale(1.03);
@@ -147,3 +162,57 @@
   }
 }
 
+.main-banner__triangle{
+  width: 181.093px;
+  height: 185.905px;
+  object-fit: contain;
+  position: absolute;
+  left: 236px;
+  top: -18px;
+  @media (max-width: 1300px) {
+    left: 36px;
+    top: -18px;
+  }
+  @media (max-width: 1100px) {
+    left: 42px;
+    top: -78px;
+  }
+  @media (max-width: 800px) {
+    left: -20px;
+    top: -78px;
+  }
+  @media (max-width: 600px) {
+    width: 136px;
+    height: 140px;
+    left: -20px;
+    top: -44px;
+  }
+}
+.main-banner__sphere{
+  width: 181px;
+  height: 181px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  right: 121px;
+  top: -42px;
+  @media (max-width: 1300px) {
+    right: -79px;
+    top: -42px;
+  }
+  @media (max-width: 1100px) {
+    right: -53px;
+    top: -42px;
+  }
+  @media (max-width: 800px) {
+    right: -85px;
+    top: -42px;
+  }
+  @media (max-width: 600px) {
+    width: 118px;
+    height: 118px;
+    right: -37px;
+    top: -11.5px;
+  }
+}
