@@ -9,6 +9,7 @@
         <img
             src="https://storage.yandexcloud.net/matetech-prod-file-storage/411356/atom_5697f8ee77c8494cec840fd4bbd4695c.webp"
             alt="ЦО Коалиция"
+            loading="lazy"
             class="about-main__atom"
         />
         <div class="about-main__sphere-big"/>
@@ -32,6 +33,7 @@
               :src="block.image"
               alt="ЦО Коалиция"
               class="about-whom__block-image"
+              loading="lazy"
           />
         </div>
 
