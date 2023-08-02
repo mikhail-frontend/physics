@@ -2,7 +2,6 @@ import colors from 'vuetify/es5/util/colors';
 import ru from 'vuetify/src/locale/ru';
 import { resolve } from 'path';
 
-const goodBye = require('css-byebye');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const webpack = require('webpack');
 
@@ -79,26 +78,6 @@ export default {
     lang: {
       locales: { ru },
       current: 'ru'
-    },
-    treeShake: true,
-    defaultAssets: false,
-    icons: { iconfont: 'mdiSvg' },
-    theme: {
-      themes: {
-        dark: {
-          primary: '#050515',
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        },
-        light: {
-          primary: '#050515',
-          blue: '#050515'
-        }
-      }
     }
   },
 
@@ -108,7 +87,6 @@ export default {
     extend(config) {
       config.resolve.alias.vue = 'vue/dist/vue.min.js';
     },
-    extractCSS: true,
     babel: {
       plugins: [
           ],

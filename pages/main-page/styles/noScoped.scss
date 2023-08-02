@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none !important;
+}
+
+input,
+button,
+textarea {
+  appearance: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  &::-webkit-scrollbar-track {
+    background-color: rgba(245, 245, 245, 0.71);
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(245, 245, 245, 0.71);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(127, 143, 164, 0.34);
+    border-radius: 5px;
+  }
+}
+
+.physics-container {
+  width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 1300px) {
+    width: calc(100% - 40px);
+  }
+  @media (max-width: 600px) {
+    width: calc(100% - 20px);
+  }
+}

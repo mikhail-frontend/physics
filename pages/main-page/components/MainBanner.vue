@@ -1,0 +1,26 @@
+<template>
+  <section class="main-banner">
+    <div class="main-banner__date">17 сентября 2023</div>
+    <h1 class="main-banner__title">Всероссийский день&nbsp;физики</h1>
+    <div class="main-banner__description">
+      День физики объединяет 20 городов и 25 инженерных университетов по всей России.
+      Будет интересно каждому!
+    </div>
+    <div class="main-banner__buttons">
+      <nuxt-link to="#" class="main-banner__participate main-banner__button" v-ripple>Принять участие</nuxt-link>
+      <nuxt-link to="#" class="main-banner__locations main-banner__button" v-ripple>Места проведения</nuxt-link>
+    </div>
+  </section>
+</template>
+<script lang="ts">
+import {Component, Vue} from "nuxt-property-decorator";
+
+@Component
+export default class MainBanner extends Vue {
+
+}
+</script>
+
+<style lang="scss" scoped>
+@import "../styles/MainBanner";
+</style>
