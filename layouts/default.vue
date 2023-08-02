@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <nuxt />
+    <nuxt/>
   </v-app>
 </template>
 
@@ -11,7 +11,26 @@ import {
 
 @Component
 export default class AppLayout extends Vue {
-
+  head() {
+    return {
+      title: 'Онлайн-школа Коалиция | Ваша образовательная траектория',
+      link: [
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: true
+        },
+        {
+          href: 'https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;800&display=swap',
+          rel: 'stylesheet'
+        }
+      ]
+    };
+  }
 }
 </script>
 

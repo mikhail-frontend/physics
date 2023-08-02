@@ -1,7 +1,7 @@
 <template>
   <section class="speakers-section physics-container">
     <header class="speakers-section__header">День физики —</header>
-    <h2 class="speakers-section__heading">Самые известные спикеры</h2>
+    <section-heading class="program-section__heading">Самые известные спикеры</section-heading>
 
     <div class="speakers-slider">
       <div class="speakers-slider__arrow speakers-slider__arrow_left" @click="slider.back()">
@@ -51,11 +51,13 @@ import speakers from "../entities/speakers";
 import SpeakerItem from "./SpeakerItem.vue";
 // @ts-ignore
 import SsrCarousel from 'vue-ssr-carousel';
+import SectionHeading from "./SectionHeading.vue";
 
 @Component({
   components: {
     SpeakerItem,
-    SsrCarousel
+    SsrCarousel,
+    SectionHeading
   }
 })
 export default class SpeakersSection extends Vue {
