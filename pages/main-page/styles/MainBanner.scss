@@ -168,6 +168,8 @@
   height: 185.905px;
   object-fit: contain;
   position: absolute;
+  user-select: none;
+  pointer-events: none;
   left: 236px;
   top: -18px;
   @media (max-width: 1300px) {
