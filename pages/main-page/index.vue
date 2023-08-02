@@ -1,14 +1,17 @@
 <template>
   <div>
     <main-banner/>
+    <about-section/>
   </div>
 </template>
 <script lang="ts">
 import {Component, Vue} from "nuxt-property-decorator";
 import MainBanner from "./components/MainBanner.vue";
+import AboutSection from "./components/AboutSection.vue";
 @Component({
   components: {
-    MainBanner
+    MainBanner,
+    AboutSection
   }
 })
 export default class MainPage extends Vue{
