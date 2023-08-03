@@ -1,0 +1,114 @@
+.register-banner-section {
+  padding: 60px 0;
+  @media (max-width: 800px) {
+    padding: 40px 0;
+  }
+}
+
+.register-banner {
+  padding: 40px;
+  border-radius: 16px;
+  background: #3F4B63;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: 600px) {
+    padding: 160px 20px 40px 20px;
+  }
+}
+
+.register-banner__content {
+  width: 621px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.register-banner__title {
+  color: #FFF;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 43px;
+  letter-spacing: -0.6px;
+  margin-bottom: 13px;
+  max-width: 505px;
+  @media (max-width: 800px) {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.48px;
+    max-width: 400px;
+  }
+  @media (max-width: 600px) {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: -0.48px;
+    max-width: 100%;
+  }
+}
+
+.register-banner__description{
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.32px;
+  margin-bottom: 56px;
+  @media (max-width: 800px) {
+    margin-bottom: 31px;
+  }
+  @media (max-width: 600px) {
+    margin-bottom: 56px;
+  }
+}
+
+.register-banner__link{
+  width: 199px;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 12px;
+  background: #735CFF;
+  color: #FFF;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144%; 
+
+}
+
+.register-banner__figures{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  width: 382px;
+  height: 414px;
+  right: 60px;
+  top: -50px;
+  background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411449/figures-big-desk_320e5d6d3425b763b98267a2d6560f72.webp');
+  @media (max-width: 1300px) {
+    background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411452/figures-small-desk_c4ad04b3c48006919783eeb25286042d.webp');
+  }
+  @media (max-width: 1100px) {
+    background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411451/figures-big-tablet_320e5d6d3425b763b98267a2d6560f72.webp');
+  }
+  @media (max-width: 800px) {
+    right: -9px;
+    top: -21px;
+    width: 448px;
+    height: 312px;
+    background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411450/figures-small-tablet_320e5d6d3425b763b98267a2d6560f72.webp');
+  }
+  @media (max-width: 600px) {
+    position: absolute;
+    right: 47px;
+    top: -45px;
+    width: 234px;
+    height: 219.959px;
+    background-image: url('https://storage.yandexcloud.net/matetech-prod-file-storage/411448/figures-mob_320e5d6d3425b763b98267a2d6560f72.webp');
+  }
+}
