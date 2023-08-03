@@ -4,6 +4,7 @@
     <about-section/>
     <speakers-section/>
     <program-section/>
+    <map-section/>
   </main>
 </template>
 <script lang="ts">
@@ -12,12 +13,14 @@ import MainBanner from "./components/MainBanner.vue";
 import AboutSection from "./components/AboutSection.vue";
 import SpeakersSection from "./components/SpeakersSection.vue";
 import ProgramSection from "./components/ProgramSection.vue";
+import MapSection from "./components/MapSection.vue";
 @Component({
   components: {
     MainBanner,
     AboutSection,
     SpeakersSection,
-    ProgramSection
+    ProgramSection,
+    MapSection
   }
 })
 export default class MainPage extends Vue{
