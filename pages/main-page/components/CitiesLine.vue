@@ -1,7 +1,16 @@
 <template>
   <div class="cities-line">
     <div class="cities" ref="ticker">
-      <div class="city" v-for="city in cities" :key="city.id">{{ city.text }}</div>
+      <nuxt-link :to="city.link"
+                 class="city"
+                 v-for="city in cities"
+                 :key="city.id">
+        {{ city.text }}
+        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.46601 2.82389L11.655 6.81097L7.66797 11" stroke="#C0C9EB" stroke-width="1.6875" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </nuxt-link>
     </div>
   </div>
 
@@ -16,7 +25,7 @@ export default class CitiesLine extends Vue {
   @Ref() ticker: HTMLElement;
 
   cities = cities;
-
+  duration = 40000;
 
   setupViewport() {
     const {ticker} = this;
@@ -33,10 +42,9 @@ export default class CitiesLine extends Vue {
     ticker.style.width = `${tickerItemsWidth}px`;
   }
 
-  animateTicker(stop = false) {
-    const {ticker} = this;
+  animateTicker() {
+    const {ticker, duration} = this;
     if (!ticker) return;
-    const duration = 30000;
     const tickerWidth = ticker.offsetWidth;
     let startTime;
 
@@ -66,14 +74,6 @@ export default class CitiesLine extends Vue {
     if (!ticker) return;
     this.setupViewport();
     this.animateTicker();
-
-    
-
-    // ticker.addEventListener('mouseenter', function () {
-    //   cancelAnimationFrame(animationFrame);
-    // });
-    //
-    // ticker.addEventListener('mouseout', this.animateTicker);
   }
 
 
@@ -84,27 +84,5 @@ export default class CitiesLine extends Vue {
 </script>
 <style lang="scss" scoped>
 @import "../styles/CitiesLine";
-
-.cities {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.city {
-  display: flex;
-  padding: 12px 16px;
-  align-items: center;
-  gap: 4px;
-  border-radius: 40px;
-  background: rgba(100, 112, 157, 0.08);
-  color: #C0C9EB;
-
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  white-space: nowrap;
-}
 </style>
 
