@@ -22,11 +22,6 @@
         <div class="about-whom__block-content">
           <div class="whom-block__title" v-html="block.title"/>
           <div class="whom-block__description" v-html="block.description"/>
-          <nuxt-link class="whom-block__link"
-                     :to="block.button_link"
-                     v-html="block.button_text"
-                     v-ripple
-          />
         </div>
         <div class="about-whom__block-images">
           <img
