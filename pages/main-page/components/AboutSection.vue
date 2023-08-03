@@ -14,7 +14,6 @@
         />
         <div class="about-main__sphere-big"/>
         <div class="about-main__sphere-small"/>
-
       </div>
     </main>
     <div class="about-section__whom">
@@ -34,6 +33,7 @@
 
       </div>
     </div>
+    <nuxt-link to="#" class="about-section__link" v-ripple>Принять участие</nuxt-link>
   </section>
 </template>
 <script lang="ts">

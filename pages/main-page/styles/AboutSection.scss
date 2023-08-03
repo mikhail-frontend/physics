@@ -376,3 +376,26 @@
 .about-whom__block-image {
   object-fit: contain;
 }
+
+
+.about-section__link{
+  width: 240px;
+  height: 49px;
+  display: flex;
+  border-radius: 12px;
+  background: #735CFF;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  color: #FFF;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144%;
+  transition: .3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  &:hover{
+    transform: scale(1.03);
+  }
+}
