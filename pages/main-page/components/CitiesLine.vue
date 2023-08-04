@@ -7,8 +7,7 @@
                  :key="city.id">
         {{ city.text }}
         <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.46601 2.82389L11.655 6.81097L7.66797 11" stroke="#C0C9EB" stroke-width="1.6875"
-                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.46601 2.82389L11.655 6.81097L7.66797 11" stroke="#C0C9EB" stroke-width="1.6875" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
 
       </nuxt-link>
@@ -28,36 +27,32 @@ export default class CitiesLine extends Vue {
   cities = cities;
   duration = 40000;
 
-  setupViewport(): void {
+  setupViewport() {
     const {ticker} = this;
     if (!ticker) return;
-
-    const tickerItems = ticker.querySelectorAll('.city') as NodeListOf<HTMLElement>;
-    tickerItems.forEach((item: HTMLElement) => {
+    const tickerItems = ticker.querySelectorAll('.city');
+    tickerItems.forEach(item => {
       ticker.prepend(item.cloneNode(true));
     });
-
     let tickerItemsWidth = 0;
     tickerItems.forEach((item: HTMLElement) => {
-      const itemWidth: number = item.offsetWidth;
+      const itemWidth = item.offsetWidth;
       tickerItemsWidth += itemWidth;
     });
-
     ticker.style.width = `${tickerItemsWidth}px`;
   }
 
-  animateTicker(): void {
+  animateTicker() {
     const {ticker, duration} = this;
     if (!ticker) return;
+    const tickerWidth = ticker.offsetWidth;
+    let startTime;
 
-    const tickerWidth: number = ticker.offsetWidth;
-    let startTime: number;
-
-    const animationStep = (timestamp: number): void => {
+    const animationStep = (timestamp) => {
       if (!startTime) startTime = timestamp;
-      const elapsed: number = timestamp - startTime;
-      const progress: number = Math.min(elapsed / duration, 1);
-      const marginLeft: number = -progress * tickerWidth;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const marginLeft = -progress * tickerWidth;
 
       ticker.style.marginLeft = `${marginLeft}px`;
 
@@ -65,18 +60,18 @@ export default class CitiesLine extends Vue {
         requestAnimationFrame(animationStep);
       } else {
         ticker.style.marginLeft = '0';
-        startTime = 0;
+        startTime = null;
         this.animateTicker();
       }
-    };
+    }
 
     requestAnimationFrame(animationStep);
   }
 
-  initializeTicker(): void {
+
+  initializeTicker() {
     const {ticker} = this;
     if (!ticker) return;
-
     this.setupViewport();
     this.animateTicker();
   }
