@@ -4,7 +4,7 @@
     <about-section/>
     <speakers-section/>
     <program-section/>
-    <map-section/>
+    <map-section v-if="!loading"/>
     <register-banner/>
   </main>
 </template>
@@ -29,26 +29,11 @@ const PhysicsNamespace = namespace('physics')
 })
 export default class MainPage extends Vue{
   @PhysicsNamespace.Action('getUniversities') getUniversities;
-  head() {
-    return {
-      script: [
-        {
-          src: `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>`,
-          type: `text/javascript`,
-          id: 'yandex'
-        },
-      ],
-      link: [
-        {
-          href: 'https://api-maps.yandex.ru',
-          rel: 'preconnect'
-        }
-      ]
-    }
-  }
-
-  async fetch() {
+  loading = true;
+  async mounted() {
+    this.loading = true;
     await this.getUniversities();
+    this.loading = false;
   }
 }
 </script>
