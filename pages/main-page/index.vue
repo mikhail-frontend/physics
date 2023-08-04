@@ -33,6 +33,3 @@ export default class MainPage extends Vue{
 <style lang="scss" scoped>
 @import "./styles/index";
 </style>
-<style lang="scss">
-@import "./styles/noScoped";
-</style>
