@@ -1,17 +1,17 @@
 <template>
   <div class="cities-line">
     <div class="cities" ref="ticker" v-if="citiesWithUniversities && citiesWithUniversities.length">
-      <nuxt-link :to="city.link"
-                 class="city"
-                 v-for="city in cities"
-                 :key="city.id">
+      <button class="city city-btn"
+              v-for="city in cities"
+              :data-city="JSON.stringify(city)"
+              :key="city.id">
         {{ city.title }}
         <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7.46601 2.82389L11.655 6.81097L7.66797 11" stroke="#C0C9EB" stroke-width="1.6875"
                 stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
 
-      </nuxt-link>
+      </button>
     </div>
   </div>
 
@@ -22,7 +22,6 @@ import {Component, namespace, Ref, Vue, Watch} from "nuxt-property-decorator";
 import {nanoid} from "nanoid";
 
 const PhysicsNamespace = namespace('physics')
-
 
 
 @Component
@@ -48,6 +47,7 @@ export default class CitiesLine extends Vue {
         id: randomId,
         title: inputArray[i % inputArray.length].title,
         link: `/location/${inputArray[i % inputArray.length].id}`,
+        city: inputArray[i % inputArray.length]
       };
       resultArray.push(newItem);
     }
@@ -97,6 +97,23 @@ export default class CitiesLine extends Vue {
     };
 
     requestAnimationFrame(animationStep);
+  }
+
+  vanillaClickEvent(ev) {
+    const isButton = ev.target.closest('button[data-city]');
+    if (!isButton) return;
+    const {city} = isButton.dataset;
+    if (!city) return;
+    this.$emit('clickOnCity', JSON.parse(city))
+  }
+
+  mounted() {
+    document.addEventListener('click', this.vanillaClickEvent, {passive: true})
+  }
+
+
+  beforeDestroy() {
+    document.removeEventListener('click', this.vanillaClickEvent);
   }
 
   initializeTicker(): void {

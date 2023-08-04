@@ -24,7 +24,7 @@
               class="main-banner__locations main-banner__button"
               v-ripple>Места проведения</button>
     </div>
-    <cities-line/>
+    <cities-line @clickOnCity="(payload) => $emit('clickOnCity', payload)"/>
   </section>
 </template>
 <script lang="ts">

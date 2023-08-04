@@ -1,6 +1,6 @@
 <template>
   <main class="physics-main">
-    <main-banner/>
+    <main-banner @clickOnCity="clickOnCity"/>
     <about-section/>
     <speakers-section/>
     <program-section/>
@@ -30,6 +30,10 @@ const PhysicsNamespace = namespace('physics')
 export default class MainPage extends Vue{
   @PhysicsNamespace.Action('getUniversities') getUniversities;
   loading = true;
+
+  clickOnCity({city}) {
+    console.log(city)
+  }
   async mounted() {
     this.loading = true;
     await this.getUniversities();
