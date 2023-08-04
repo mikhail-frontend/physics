@@ -146,7 +146,6 @@ export default class YandexMap extends Vue {
   }
 
   openBalloonWithCoords(coords: [number | string, number | string]) {
-    console.log(coords)
     if (!coords) return;
     let [lat, lon] = coords;
     lat = Number(lat);
@@ -165,20 +164,16 @@ export default class YandexMap extends Vue {
           return
         }
       })
-    })
+    });
+    this.$router.replace(({
+      query: {}
+    })).catch(() => ({}))
   }
 
   @Watch('$route.query')
   onQueryChange({city, coords}) {
     if(city) {
       this.checkCity(JSON.parse(city));
-      this.$router.replace(({
-        query: {}
-      })).catch(() => ({}))
-    }
-    if(coords) {
-      this.$vuetify.goTo('#map-section');
-      this.openBalloonWithCoords(JSON.parse(coords));
       this.$router.replace(({
         query: {}
       })).catch(() => ({}))

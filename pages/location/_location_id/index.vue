@@ -36,20 +36,7 @@
             </nuxt-link>
           </div>
         </div>
-        <div class="location-page__info location-page__info_about">
-          <div class="location-page__info-title">
-            Об университете
-          </div>
-          <div class="location-page__info-description">
-            Один из ведущих российских университетов,
-            готовящий специалистов по 18 направлениям:
-            <ul>
-              <li>Международные отношения</li>
-              <li>Экономика (международные экономические отношения)</li>
-              <li>Юриспруденция (международное право) и др.</li>
-            </ul>
-          </div>
-        </div>
+        <div class="location-page__info location-page__info_about" v-if="false"/>
       </div>
       <img src="https://i.ibb.co/YbQ4KWq/mifi.webp"
            alt="МИФИ"

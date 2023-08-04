@@ -5,6 +5,7 @@
   font-weight: 500;
   line-height: 23px;
   margin-bottom: 45px;
+
 }
 
 .location-events__list {
@@ -23,6 +24,18 @@
   grid-template-columns: 185px 1fr 134px;
   grid-gap: 24px;
   min-height: 144px;
+  position: relative;
+  @media (max-width: 800px) {
+    padding: 24px;
+    grid-gap: 10px;
+    grid-template-columns: 130px 1fr 134px;
+  }
+  @media (max-width: 600px) {
+    padding: 24px 16px;
+    display: block;
+    gap: unset;
+    grid-gap: unset;
+  }
 }
 
 .location-event__time {
@@ -31,6 +44,18 @@
   font-style: normal;
   font-weight: 500;
   line-height: 21.4px;
+  @media (max-width: 800px) {
+    font-size: 16px;
+    line-height: 21.4px;
+    margin-right: 10px;
+  }
+  @media (max-width: 600px) {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.4px;
+    margin-bottom: 14px;
+    margin-right: 0;
+  }
 }
 
 .location-event__title {
@@ -42,6 +67,22 @@
   display: flex;
   align-items: center;
   margin-bottom: 5px;
+  @media (max-width: 800px) {
+    color: #142039;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21.4px;
+    margin-bottom: 7px;
+  }
+  @media (max-width: 600px) {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21.4px;
+    display: block;
+    margin-bottom: 16px;
+  }
 }
 
 .location-event__label {
@@ -61,6 +102,20 @@
   border-radius: 50px;
   background: #DADAFF;
   transform: translateY(-1px);
+  @media (max-width: 800px) {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 21.4px;
+  }
+  @media (max-width: 600px) {
+    height: 27px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 21.4px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
 }
 
 .location-event__description {
@@ -70,6 +125,12 @@
   font-weight: 400;
   line-height: 26px;
   margin-bottom: 13px;
+  @media (max-width: 600px) {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 24px;
+  }
 }
 
 .location-event__auditorium{
@@ -91,6 +152,11 @@
     background-position: center center;
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 0C7.05928 2.75995 9.24005 4.94072 12 6C9.24005 7.05928 7.05928 9.24005 6 12C4.92995 9.24706 2.75294 7.07005 0 6C2.75995 4.94072 4.94072 2.75995 6 0Z' fill='%235A697A'/%3E%3C/svg%3E");
   }
+  @media (max-width: 600px) {
+    position: absolute;
+    left: 16px;
+    bottom: 24px;
+  }
 }
 
 .location-event__teacher {
@@ -101,4 +167,12 @@
   line-height: 21.4px;
   display: flex;
   align-items: flex-end;
+  @media (max-width: 600px) {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+    margin-left: auto;
+    line-height: 21.4px;
+    width: max-content;
+  }
 }
