@@ -180,6 +180,11 @@ export default class YandexMap extends Vue {
       })
     })
   }
+
+  beforeDestroy() {
+    this.yandexMap?.destroy();
+    this.loading = true;
+  }
 }
 </script>
 
