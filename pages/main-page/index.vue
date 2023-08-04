@@ -9,13 +9,14 @@
   </main>
 </template>
 <script lang="ts">
-import {Component, Vue} from "nuxt-property-decorator";
+import {Component, namespace, Vue} from "nuxt-property-decorator";
 import MainBanner from "./components/MainBanner.vue";
 import AboutSection from "./components/AboutSection.vue";
 import SpeakersSection from "./components/SpeakersSection.vue";
 import ProgramSection from "./components/ProgramSection.vue";
 import MapSection from "./components/MapSection.vue";
 import RegisterBanner from "./components/RegisterBanner.vue";
+const PhysicsNamespace = namespace('physics')
 @Component({
   components: {
     MainBanner,
@@ -27,6 +28,7 @@ import RegisterBanner from "./components/RegisterBanner.vue";
   }
 })
 export default class MainPage extends Vue{
+  @PhysicsNamespace.Action('getUniversities') getUniversities;
   head() {
     return {
       script: [
@@ -43,6 +45,10 @@ export default class MainPage extends Vue{
         }
       ]
     }
+  }
+
+  async fetch() {
+    await this.getUniversities();
   }
 }
 </script>

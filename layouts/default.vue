@@ -27,8 +27,21 @@ export default class AppLayout extends Vue {
         {
           href: 'https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;800&display=swap',
           rel: 'stylesheet'
+        },
+        {
+          href: 'https://api-maps.yandex.ru',
+          rel: 'preconnect'
         }
-      ]
+      ],
+      script: [
+        {
+          src: `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>`,
+          type: `text/javascript`,
+          id: 'yandex',
+          async: true,
+          defer: true
+        },
+      ],
     };
   }
 }

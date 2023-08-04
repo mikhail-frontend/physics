@@ -18,12 +18,15 @@
 </template>
 
 <script lang="ts">
-import {Component, Ref, Vue} from "nuxt-property-decorator";
+import {Component, namespace, Ref, Vue} from "nuxt-property-decorator";
+const PhysicsNamespace = namespace('physics')
+
 import cities from "../entities/cities";
 
 @Component
 export default class CitiesLine extends Vue {
   @Ref() ticker: HTMLElement;
+  @PhysicsNamespace.State('citiesWithUniversities') citiesWithUniversities;
 
   cities = cities;
   duration = 40000;
@@ -83,6 +86,7 @@ export default class CitiesLine extends Vue {
 
 
   mounted() {
+    console.log(this.citiesWithUniversities)
     this.initializeTicker();
   }
 }
