@@ -4,6 +4,15 @@ ymaps[id][style] {
   font-family: 'Golos Text', sans-serif !important;
   padding: 14px 12px 14px 12px;
   box-sizing: border-box;
+  @media (max-width: 600px) {
+    width: 280px !important;
+  }
+  @media (max-width: 360px) {
+    width: 260px !important;
+  }
+  @media (max-width: 340px) {
+    width: 250px !important;
+  }
 
 }
 .university-balloon__title{

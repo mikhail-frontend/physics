@@ -1,6 +1,20 @@
 <template>
   <div v-if="!loading" class="yandex-map">
-    <div class="yandex-map__cities">
+    <svg class="toggle-map" v-if="isListOpen"
+         @click="isListOpen = !isListOpen"
+         width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M36 0H8C3.58172 0 0 3.58172 0 8V28C0 32.4183 3.58172 36 8 36H36V0Z" fill="#0C0C0C" fill-opacity="0.8"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2929 13.2929C14.9024 13.6834 14.9024 14.3166 15.2929 14.7071L18.5858 18L15.2929 21.2929C14.9024 21.6834 14.9024 22.3166 15.2929 22.7071C15.6834 23.0976 16.3166 23.0976 16.7071 22.7071L20.7071 18.7071C21.0976 18.3166 21.0976 17.6834 20.7071 17.2929L16.7071 13.2929C16.3166 12.9024 15.6834 12.9024 15.2929 13.2929Z" fill="white"/>
+    </svg>
+
+    <svg v-else
+         @click="isListOpen = !isListOpen"
+         class="toggle-map" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M36 0H8C3.58172 0 0 3.58172 0 8V28C0 32.4183 3.58172 36 8 36H36V0Z" fill="#0C0C0C" fill-opacity="0.8"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.7071 13.2929C21.0976 13.6834 21.0976 14.3166 20.7071 14.7071L17.4142 18L20.7071 21.2929C21.0976 21.6834 21.0976 22.3166 20.7071 22.7071C20.3166 23.0976 19.6834 23.0976 19.2929 22.7071L15.2929 18.7071C14.9024 18.3166 14.9024 17.6834 15.2929 17.2929L19.2929 13.2929C19.6834 12.9024 20.3166 12.9024 20.7071 13.2929Z" fill="white"/>
+    </svg>
+    <div class="yandex-map__cities" :class="{'active': isListOpen}">
+
       <div class="map-cities__title">Города</div>
       <div class="profile-radios">
         <div class="profile-radio" v-for="(city) in citiesWithUniversities" :key="city.id">
@@ -33,6 +47,8 @@ export default class YandexMap extends Vue {
   map_center = [];
   all_universities = []
   yandexMap = null;
+  isListOpen = false;
+
 
   async mounted() {
     await this.getUniversities();
@@ -139,6 +155,7 @@ export default class YandexMap extends Vue {
       this.loading = false;
       this.checked_city = city.id;
       this.initMap(city.city_coords)
+      this.isListOpen = !this.isListOpen;
     })
   }
 
