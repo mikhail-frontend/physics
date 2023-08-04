@@ -38,7 +38,7 @@
   </div>
 </template>
 <script lang="ts">
-import {Component, Vue, namespace} from "nuxt-property-decorator";
+import {Component, Vue, namespace, Watch} from "nuxt-property-decorator";
 
 
 const PhysicsNamespace = namespace('physics')
@@ -165,6 +165,15 @@ export default class YandexMap extends Vue {
         }
       })
     })
+  }
+
+  @Watch('$route.query')
+  onQueryChange({city}) {
+    if(!city) return;
+    this.checkCity(JSON.parse(city));
+    this.$router.replace(({
+      query: {}
+    })).catch(() => ({}))
   }
 
   beforeDestroy() {
