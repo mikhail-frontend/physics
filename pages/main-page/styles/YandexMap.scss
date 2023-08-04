@@ -1,0 +1,98 @@
+.yandex-map{
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  height: 803px;
+}
+
+.yandex-map__cities{
+  display: flex;
+  padding: 30px 16px 30px 30px;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.map-cities__title{
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.profile-radio {
+  margin-bottom: 7px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.profile-radio__input {
+  display: none;
+
+  &+label {
+    display: flex;
+    width: 350px;
+    height: 52px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    background: #F4F6FB;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    padding-left: 45px;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 17px;
+      height: 18px;
+      background-image: url("data:image/svg+xml,%3Csvg width='17' height='18' viewBox='0 0 17 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1.25' y='1.75' width='14.5' height='14.5' rx='7.25' fill='white'/%3E%3Crect x='1.25' y='1.75' width='14.5' height='14.5' rx='7.25' stroke='%23E1E4EC' stroke-width='2.5'/%3E%3C/svg%3E");
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    img {
+      margin-right: 11px;
+    }
+  }
+
+  &:checked+label {
+    background: #D9E8FF;
+
+    &:before {
+      background-image: url("data:image/svg+xml,%3Csvg width='17' height='18' viewBox='0 0 17 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1.25' y='1.75' width='14.5' height='14.5' rx='7.25' fill='%232563EB'/%3E%3Cpath d='M12.9699 5.59255C13.1691 5.7918 13.281 6.062 13.281 6.34374C13.281 6.62547 13.1691 6.89568 12.9699 7.09492L7.65744 12.4074C7.45819 12.6066 7.18799 12.7185 6.90626 12.7185C6.62452 12.7185 6.35432 12.6066 6.15507 12.4074L4.03007 10.2824C3.83652 10.082 3.72943 9.81364 3.73185 9.53506C3.73427 9.25648 3.84601 8.98999 4.04301 8.79299C4.24001 8.596 4.50649 8.48425 4.78508 8.48183C5.06366 8.47941 5.33205 8.58651 5.53244 8.78005L6.90626 10.1539L11.4676 5.59255C11.6668 5.39336 11.937 5.28146 12.2188 5.28146C12.5005 5.28146 12.7707 5.39336 12.9699 5.59255Z' fill='white'/%3E%3Crect x='1.25' y='1.75' width='14.5' height='14.5' rx='7.25' stroke='%232563EB' stroke-width='2.5'/%3E%3C/svg%3E");
+    }
+  }
+
+}
+
+.profile-radio__input#all {
+  &+label {
+    display: none;
+  }
+}
+
+.profile-radios__title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 12px;
+}
