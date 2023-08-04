@@ -1,0 +1,104 @@
+.location-events__title {
+  color: #282047;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  margin-bottom: 45px;
+}
+
+.location-events__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 11px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.location-event {
+  border-radius: 10px;
+  background: #F6F6FD;
+  padding: 30px 35px 25px 28px;
+  display: grid;
+  grid-template-columns: 185px 1fr 134px;
+  grid-gap: 24px;
+  min-height: 144px;
+}
+
+.location-event__time {
+  color: #142039;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21.4px;
+}
+
+.location-event__title {
+  color: #142039;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21.4px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.location-event__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #735CFF;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  //line-height: 21.4px; /* 164.615% */
+  height: 27px;
+  padding: 10px;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-left: 10px;
+  border-radius: 50px;
+  background: #DADAFF;
+  transform: translateY(-1px);
+}
+
+.location-event__description {
+  color: #5A697A;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 13px;
+}
+
+.location-event__auditorium{
+  color: #5A697A;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  &:before{
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 0C7.05928 2.75995 9.24005 4.94072 12 6C9.24005 7.05928 7.05928 9.24005 6 12C4.92995 9.24706 2.75294 7.07005 0 6C2.75995 4.94072 4.94072 2.75995 6 0Z' fill='%235A697A'/%3E%3C/svg%3E");
+  }
+}
+
+.location-event__teacher {
+  color: #142039;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21.4px;
+  display: flex;
+  align-items: flex-end;
+}

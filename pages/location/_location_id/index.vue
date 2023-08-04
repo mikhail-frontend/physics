@@ -1,5 +1,11 @@
 <template>
   <div class="physics-container location-page">
+    <nuxt-link to="/main-page" class="location-page__back">
+      <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.83008 10.6597L1.00022 5.82986L5.83008 1" stroke="#605E6C" stroke-width="1.9931" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Всероссийский день физики
+    </nuxt-link>
     <main class="location-page__main">
       <div class="location-page__content">
         <h1 class="location-page__title">
@@ -43,14 +49,19 @@
       >
 
     </main>
-
+    <location-events/>
+    <nuxt-link to="#" class="location-page__participate">Принять участие</nuxt-link>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from "nuxt-property-decorator";
-
-@Component
+import LocationEvents from "./components/LocationEvents.vue";
+@Component({
+  components: {
+    LocationEvents
+  }
+})
 export default class Location extends Vue {
 
 }

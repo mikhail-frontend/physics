@@ -10,7 +10,7 @@ const aboutData = {
              поделимся полезными материалами для преподавания`,
             image: 'https://storage.yandexcloud.net/matetech-prod-file-storage/411357/for-teachers_d1022bb5b2e7b7d41c81c6a1d1d7e330.webp',
             button_text: 'Принять участие',
-            button_link: '#'
+            button_link: '/location/2'
         },
         {
             id: 2,
@@ -19,7 +19,7 @@ const aboutData = {
             расскажем про возможности обучения,  и кем можно стать в будущем`,
             image: 'https://storage.yandexcloud.net/matetech-prod-file-storage/411358/for-students_d1022bb5b2e7b7d41c81c6a1d1d7e330.webp',
             button_text: 'Принять участие',
-            button_link: '#'
+            button_link: '/location/2'
         },
     ]
 };

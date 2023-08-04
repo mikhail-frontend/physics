@@ -4,6 +4,33 @@
   position: relative;
 }
 
+.location-page__back {
+  position: absolute;
+  left: 0;
+  top: 28px;
+  color: #0D1834;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.28px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  svg {
+    transition: .3s ease;
+
+  }
+
+  &:hover {
+    color: rgba(13, 24, 52, 0.71);
+    svg {
+      transform: translateX(-4px);
+    }
+  }
+}
+
 .location-page__main {
   margin-bottom: 76px;
   display: grid;
@@ -42,9 +69,11 @@
   &.location-page__info_date {
     margin-bottom: 34px;
   }
-  &.location-page__info_place{
+
+  &.location-page__info_place {
     margin-bottom: 41px;
   }
+
   a {
     color: #735CFF;
     font-size: 16px;
@@ -73,4 +102,29 @@
   font-style: normal;
   font-weight: 400;
   line-height: 27px;
+}
+
+.location-page__participate {
+  width: 240px;
+  height: 49px;
+  flex-shrink: 0;
+  margin-top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  background: #735CFF;
+  white-space: nowrap;
+  color: #FFF;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }

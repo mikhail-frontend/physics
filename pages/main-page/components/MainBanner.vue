@@ -17,8 +17,8 @@
       Будет интересно каждому!
     </div>
     <div class="main-banner__buttons">
-      <nuxt-link to="#" class="main-banner__participate main-banner__button" v-ripple>Принять участие</nuxt-link>
-      <nuxt-link to="#" class="main-banner__locations main-banner__button" v-ripple>Места проведения</nuxt-link>
+      <nuxt-link to="/location/2" class="main-banner__participate main-banner__button" v-ripple>Принять участие</nuxt-link>
+      <nuxt-link to="/location/2" class="main-banner__locations main-banner__button" v-ripple>Места проведения</nuxt-link>
     </div>
     <cities-line/>
   </section>

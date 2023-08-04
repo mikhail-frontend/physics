@@ -33,7 +33,7 @@
 
       </div>
     </div>
-    <nuxt-link to="#" class="about-section__link" v-ripple>Принять участие</nuxt-link>
+    <nuxt-link to="/location/2" class="about-section__link" v-ripple>Принять участие</nuxt-link>
   </section>
 </template>
 <script lang="ts">
