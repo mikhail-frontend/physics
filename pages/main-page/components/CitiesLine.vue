@@ -1,11 +1,11 @@
 <template>
   <div class="cities-line">
-    <div class="cities" ref="ticker">
+    <div class="cities" ref="ticker" v-if="citiesWithUniversities && citiesWithUniversities.length">
       <nuxt-link :to="city.link"
                  class="city"
                  v-for="city in cities"
                  :key="city.id">
-        {{ city.text }}
+        {{ city.title }}
         <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7.46601 2.82389L11.655 6.81097L7.66797 11" stroke="#C0C9EB" stroke-width="1.6875"
                 stroke-linecap="round" stroke-linejoin="round"/>
@@ -18,18 +18,41 @@
 </template>
 
 <script lang="ts">
-import {Component, namespace, Ref, Vue} from "nuxt-property-decorator";
+import {Component, namespace, Ref, Vue, Watch} from "nuxt-property-decorator";
+import {nanoid} from "nanoid";
+
 const PhysicsNamespace = namespace('physics')
 
-import cities from "../entities/cities";
+
 
 @Component
 export default class CitiesLine extends Vue {
   @Ref() ticker: HTMLElement;
-  @PhysicsNamespace.State('citiesWithUniversities') citiesWithUniversities;
-
-  cities = cities;
+  @PhysicsNamespace.State('citiesWithUniversities') citiesWithUniversities
+  cities = [];
   duration = 40000;
+  isInitialized = false;
+
+
+  generateArrayWithUniqueIds(inputArray, length) {
+    const resultArray = [];
+    const usedIds = new Set();
+    for (let i = 0; i < length; i++) {
+      let randomId;
+      do {
+        randomId = nanoid();
+      } while (usedIds.has(randomId));
+
+      usedIds.add(randomId);
+      const newItem = {
+        id: randomId,
+        title: inputArray[i % inputArray.length].title,
+        link: `/location/${inputArray[i % inputArray.length].id}`,
+      };
+      resultArray.push(newItem);
+    }
+    return resultArray;
+  }
 
   setupViewport(): void {
     const {ticker} = this;
@@ -77,17 +100,23 @@ export default class CitiesLine extends Vue {
   }
 
   initializeTicker(): void {
-    const {ticker} = this;
-    if (!ticker) return;
-
+    const {ticker, isInitialized} = this;
+    if (!ticker || isInitialized) return;
     this.setupViewport();
     this.animateTicker();
+    this.isInitialized = true;
   }
 
 
-  mounted() {
-    console.log(this.citiesWithUniversities)
-    this.initializeTicker();
+  @Watch('citiesWithUniversities')
+  onCitiesChange(newVal) {
+    const length = newVal.length;
+    this.$set(this, 'cities', length > 15 ? newVal : this.generateArrayWithUniqueIds(newVal, 15))
+    if (newVal && newVal.length) {
+      this.$nextTick(() => {
+        this.initializeTicker();
+      })
+    }
   }
 }
 </script>

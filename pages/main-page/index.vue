@@ -35,6 +35,10 @@ export default class MainPage extends Vue{
     await this.getUniversities();
     this.loading = false;
   }
+
+  async fetch() {
+    await this.getUniversities();
+  }
 }
 </script>
 <style lang="scss" scoped>
