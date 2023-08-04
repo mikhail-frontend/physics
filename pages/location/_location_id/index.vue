@@ -45,12 +45,12 @@
 
     </main>
     <location-events/>
-    <nuxt-link :to="{
-        name: 'main-page',
-        query: {
-          coords: JSON.stringify([lat, lon])
+    <nuxt-link :to="{   name: 'location-location_id-register',
+        params: {
+          location_id: $route.params.location_id
         }
-    }" class="location-page__participate location-page__button">Принять участие
+    }"
+               class="location-page__participate location-page__button">Принять участие
     </nuxt-link>
   </div>
 </template>
