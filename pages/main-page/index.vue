@@ -32,15 +32,17 @@ export default class MainPage extends Vue{
   loading = true;
 
   clickOnCity({city}) {
-    console.log(city)
+    this.$vuetify.goTo('#mapSection')
   }
-  async mounted() {
+
+  async created() {
     this.loading = true;
-    await this.getUniversities();
+    const result = await this.getUniversities();
     this.loading = false;
   }
 
   async fetch() {
+    console.log(2)
     await this.getUniversities();
   }
 }

@@ -14,7 +14,7 @@
     "prod": "rimraf dist && yarn && yarn build && yarn start",
     "lint:scss": "stylelint **/*.scss",
     "lint:fix-scss": "stylelint --fix **/*.scss",
-    "deploy": "yarn build && yarn generate && firebase deploy"
+    "deploy": "yarn build && firebase deploy"
   },
   "dependencies": {
     "@nuxt/image": "^0.6.2",

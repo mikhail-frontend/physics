@@ -123,7 +123,7 @@ export default class YandexMap extends Vue {
               </svg>
               <div class="university-balloon__title">${name}</div>
               <div class="university-balloon__address">${address}</div>
-              <a href="/location/${id}" class="university-balloon__link">
+              <a href="/location/${2}" class="university-balloon__link">
                  Выбрать
                  <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                    <path d="M1.70874 1.38864L6.65639 6.09776L1.94727 11.0454" stroke="white" stroke-width="1.9931" stroke-linecap="round" stroke-linejoin="round"/>

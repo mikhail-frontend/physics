@@ -35,7 +35,7 @@ export default class AppLayout extends Vue {
       ],
       script: [
         {
-          src: `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>`,
+          src: `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e5866d5b-d165-405a-9769-3ba923468315`,
           type: `text/javascript`,
           id: 'yandex',
           async: true,
