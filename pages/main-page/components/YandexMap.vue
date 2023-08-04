@@ -38,11 +38,15 @@ export default class YandexMap extends Vue {
     await this.getUniversities();
     this.setData();
     this.initMap();
+    this.$nextTick(() => {
+
+      // this.openBalloonWithCoords([55.719488, 37.464314]);
+    })
   }
 
-  initMap() {
+  initMap(map_center = this.map_center) {
     const {ymaps} = window;
-    const {map_center, all_universities} = this;
+    const {all_universities} = this;
     const self = this;
     if (!ymaps) return;
     ymaps.ready(function () {
@@ -60,9 +64,9 @@ export default class YandexMap extends Vue {
 
       if (Array.isArray(all_universities) && all_universities.length) {
         for (let university of all_universities) {
-          const {lat, lon, address, name} = university;
+          const {lat, lon, address, name, id} = university;
           const placemark = new ymaps.Placemark([lat, lon], {
-            balloonContent: self.createPointData(name, address)
+            balloonContent: self.createPointData(name, address, id),
           }, {
             iconLayout: 'default#imageWithContent',
             iconImageHref: require('../img/pin.png'),
@@ -75,7 +79,8 @@ export default class YandexMap extends Vue {
         }
       }
       universitiesMap.behaviors.disable('scrollZoom');
-      self.yandexMap = universitiesMap
+      self.yandexMap = universitiesMap;
+      window.universitiesMap = universitiesMap
     });
   }
 
@@ -109,25 +114,62 @@ export default class YandexMap extends Vue {
     this.loading = false
   }
 
-  createPointData(name, address) {
-    return `<div class="school-balloon">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  createPointData(name, address, id) {
+    return `<div class="university-balloon">
+              <svg class="university-balloon__image" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.4733 3.34564C15.9908 3.06993 15.3985 3.06993 14.916 3.34564L3.92996 9.62337C3.17739 10.0534 2.91593 11.0121 3.34597 11.7647C3.63535 12.2711 4.1641 12.5551 4.70835 12.5557V23.5415C3.84158 23.5415 3.13892 24.2441 3.13892 25.1109C3.13892 25.9777 3.84158 26.6804 4.70835 26.6804H26.6804C27.5472 26.6804 28.2499 25.9777 28.2499 25.1109C28.2499 24.2441 27.5472 23.5415 26.6804 23.5415V12.5557C27.2249 12.5553 27.7539 12.2713 28.0433 11.7647C28.4734 11.0121 28.2119 10.0534 27.4593 9.62337L16.4733 3.34564ZM9.41665 14.1249C8.54988 14.1249 7.84722 14.8275 7.84722 15.6943V20.4026C7.84722 21.2694 8.54988 21.9721 9.41665 21.9721C10.2834 21.9721 10.9861 21.2694 10.9861 20.4026V15.6943C10.9861 14.8275 10.2834 14.1249 9.41665 14.1249ZM14.125 15.6943C14.125 14.8275 14.8276 14.1249 15.6944 14.1249C16.5612 14.1249 17.2638 14.8275 17.2638 15.6943V20.4026C17.2638 21.2694 16.5612 21.9721 15.6944 21.9721C14.8276 21.9721 14.125 21.2694 14.125 20.4026V15.6943ZM21.9721 14.1249C21.1053 14.1249 20.4027 14.8275 20.4027 15.6943V20.4026C20.4027 21.2694 21.1053 21.9721 21.9721 21.9721C22.8389 21.9721 23.5416 21.2694 23.5416 20.4026V15.6943C23.5416 14.8275 22.8389 14.1249 21.9721 14.1249Z" fill="#A1A7BA"/>
               </svg>
-              <div class="school__title">${name}</div>
-                   <div>${address}</div>
-               </div>
-                `
+              <div class="university-balloon__title">${name}</div>
+              <div class="university-balloon__address">${address}</div>
+              <a href="/location/${id}" class="university-balloon__link">
+                 Выбрать
+                 <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M1.70874 1.38864L6.65639 6.09776L1.94727 11.0454" stroke="white" stroke-width="1.9931" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+               </a>
+            </div>
+                `;
   };
 
   checkCity(city) {
     const {yandexMap} = this;
     if (!yandexMap || !city || !city.city_coords) return;
-    yandexMap.setCenter(city.city_coords);
+    this.loading = true;
+    this.$nextTick(() => {
+      this.loading = false;
+      this.checked_city = city.id;
+      this.initMap(city.city_coords)
+    })
+  }
+
+  openBalloonWithCoords(coords:[number|string, number|string]) {
+    if(!coords) return;
+    let [lat, lon] = coords;
+    lat = Number(lat);
+    lon = Number(lon);
+    const {ymaps} = window;
+    if (!ymaps || !lat || !lon) return;
+    ymaps.ready(() => {
+      const {yandexMap} = this;
+      if (!yandexMap) return;
+      yandexMap.geoObjects.each((el) => {
+        const elementCoords = el.geometry.getCoordinates();
+        const  [elLat, elLon] = elementCoords;
+        if(elLat === lat && elLon === lon){
+          el.balloon.open();
+          yandexMap.setCenter([elLat, elLon]);
+          return
+        }
+      })
+    })
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/YandexMap";
+</style>
+
+<style lang="scss">
+@import "../styles/YandexBalloon";
 </style>

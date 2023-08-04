@@ -1,11 +1,10 @@
 <template>
   <main class="physics-main">
-    <map-section/>
     <main-banner/>
     <about-section/>
     <speakers-section/>
     <program-section/>
-
+    <map-section/>
     <register-banner/>
   </main>
 </template>

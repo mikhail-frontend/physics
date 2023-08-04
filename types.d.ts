@@ -76,7 +76,8 @@ declare global {
         videojs: any
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         $alert: any,
-        ymaps: any
+        ymaps: any,
+        universitiesMap: any
     }
 
 }
