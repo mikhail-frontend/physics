@@ -3,7 +3,7 @@
     <div class="yandex-map__cities">
       <div class="map-cities__title">Города</div>
       <div class="profile-radios">
-        <div class="profile-radio" v-for="(city) in citiesWithSchools" :key="city.id">
+        <div class="profile-radio" v-for="(city) in citiesWithUniversities" :key="city.id">
 
           <input type="radio"
                  name="profile"
@@ -12,7 +12,7 @@
                  :checked="checked_city === city.id"
                  class="profile-radio__input"
           />
-          <label :for="city.id">{{city.title}}</label>
+          <label :for="city.id">{{ city.title }}</label>
         </div>
       </div>
     </div>
@@ -23,45 +23,67 @@
 import {Component, Vue} from "nuxt-property-decorator";
 import universities from "../entities/universities";
 import axios from 'axios'
+
 @Component
 export default class YandexMap extends Vue {
 
   loading = true;
-  citiesWithSchools = [];
+  citiesWithUniversities = [];
   checked_city = 0;
-  map_canter = [];
+  map_center = [];
+  all_universities = []
 
   async mounted() {
-    await this.getSchools();
+    await this.getUniversities();
     this.setData();
-    const {ymaps} = window;
+    this.initMap();
   }
 
-  async getSchools() {
+  initMap() {
+    const {ymaps} = window;
+    const {map_center, citiesWithUniversities} = this;
+    if (!ymaps) return;
+    ymaps.ready(function () {
+      const universitiesMap = new ymaps.Map('map', {
+        center: map_center,
+        zoom: 10,
+        behaviors: ['default', 'scrollZoom'],
+        controls: ['zoomControl']
+      }, {
+        searchControlProvider: 'yandex#search'
+      });
+
+      universitiesMap.behaviors.disable('scrollZoom');
+    });
+  }
+
+  async getUniversities() {
     this.loading = true;
     try {
-      const {data:serverResponse} = await axios.get(
+      const {data: serverResponse} = await axios.get(
           `http://localhost:8080/api/public/companies/1/map_cities`,
           {
-             params: {
-               'with': 'mapUniversities;mapUniversities.mapCity',
-               all: 1
-             }
+            params: {
+              'with': 'mapUniversities;mapUniversities.mapCity',
+              all: 1
+            }
           }
       );
       const {data} = serverResponse;
-      this.$set(this, 'citiesWithSchools', data);
+      this.$set(this, 'citiesWithUniversities', data);
     } catch (e) {
-      this.$set(this, 'citiesWithSchools', universities);
+      this.$set(this, 'citiesWithUniversities', universities);
     }
   }
 
   setData() {
-    const {citiesWithSchools} = this;
-    if(!citiesWithSchools.length) return;
-    const [first] = citiesWithSchools;
+    const {citiesWithUniversities} = this;
+    if (!citiesWithUniversities.length) return;
+    const [first] = citiesWithUniversities;
     this.checked_city = first.id;
-    this.map_canter = first.city_coords;
+    this.map_center = first.city_coords;
+    const all_universities = citiesWithUniversities.map(({map_universities}) => map_universities).flat();
+    this.$set(this, 'all_universities', all_universities);
     this.loading = false
   }
 }
