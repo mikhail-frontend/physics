@@ -27,7 +27,13 @@
           </div>
           <div class="location-page__info-description">
             Олимпийский проспект, д.11 стр. 1, вход с остановки <br/>
-            <nuxt-link to="#">Смотреть на карте</nuxt-link>
+            <nuxt-link :to="{
+                name: 'main-page',
+                query: {
+                  coords: JSON.stringify([lat, lon])
+                }
+            }">Смотреть на карте
+            </nuxt-link>
           </div>
         </div>
         <div class="location-page__info location-page__info_about">
@@ -52,7 +58,13 @@
 
     </main>
     <location-events/>
-    <nuxt-link to="#" class="location-page__participate location-page__button">Принять участие</nuxt-link>
+    <nuxt-link :to="{
+        name: 'main-page',
+        query: {
+          coords: JSON.stringify([lat, lon])
+        }
+    }" class="location-page__participate location-page__button">Принять участие
+    </nuxt-link>
   </div>
 </template>
 
@@ -66,7 +78,8 @@ import LocationEvents from "./components/LocationEvents.vue";
   }
 })
 export default class Location extends Vue {
-
+  lat = 55.557587;
+  lon = 37.422576;
 }
 </script>
 <style lang="scss" scoped>

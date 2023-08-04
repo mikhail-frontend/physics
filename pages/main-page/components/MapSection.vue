@@ -9,20 +9,26 @@
       </div>
     </div>
     <div class="map-wrap">
-      <yandex-map/>
+      <yandex-map ref="map"/>
     </div>
   </section>
 </template>
 <script lang="ts">
-import {Component, Vue} from "nuxt-property-decorator";
+import {Component, Ref, Vue} from "nuxt-property-decorator";
 import YandexMap from "./YandexMap.vue";
+
 @Component({
   components: {
     YandexMap
   }
 })
 export default class MapSection extends Vue {
+  @Ref() map;
 
+  openBalloon(coords) {
+    console.log(234)
+    this.map.openBalloonWithCoords(JSON.parse(coords))
+  }
 }
 </script>
 
