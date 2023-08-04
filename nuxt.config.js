@@ -83,10 +83,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    publicPath: '/public-dir',
     extend(config) {
       config.resolve.alias.vue = 'vue/dist/vue.min.js';
     },
+    // extractCSS: true,
     babel: {
       plugins: [
           ],

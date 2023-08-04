@@ -77,7 +77,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: 144%; 
-
+  transition: .3s ease;
+  &:hover{
+    transform: scale(1.03);
+  }
 }
 
 .register-banner__figures{
