@@ -1,5 +1,5 @@
 <template>
-  <section class="map-section">
+  <section class="map-section" id="map-section">
     <div class="physics-container">
       <h2 class="map-section__title">
         Выберите город
@@ -8,16 +8,19 @@
         Узнайте подробности проведения дня физики в своем городе
       </div>
     </div>
-    <div class="map-wrap physics-container">
-      <div id="map">тут карта
-      </div>
+    <div class="map-wrap">
+      <yandex-map/>
     </div>
   </section>
 </template>
 <script lang="ts">
 import {Component, Vue} from "nuxt-property-decorator";
-
-@Component
+import YandexMap from "./YandexMap.vue";
+@Component({
+  components: {
+    YandexMap
+  }
+})
 export default class MapSection extends Vue {
 
 }

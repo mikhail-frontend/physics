@@ -75,6 +75,8 @@ declare global {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         videojs: any
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        $alert: any
+        $alert: any,
+        ymaps: any
     }
+
 }

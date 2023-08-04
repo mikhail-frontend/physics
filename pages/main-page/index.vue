@@ -27,7 +27,23 @@ import RegisterBanner from "./components/RegisterBanner.vue";
   }
 })
 export default class MainPage extends Vue{
-
+  head() {
+    return {
+      script: [
+        {
+          src: `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>`,
+          type: `text/javascript`,
+          id: 'yandex'
+        },
+      ],
+      link: [
+        {
+          href: 'https://api-maps.yandex.ru',
+          rel: 'preconnect'
+        }
+      ]
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
