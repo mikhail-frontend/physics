@@ -9,21 +9,38 @@
     </nuxt-link>
 
     <h1 class="location-register__title">Регистрация</h1>
-    <div class="location-register__description">Чтобы принять участие в Дне физики вам необходимо заполнить эту форму</div>
-    <register-form/>
-
+    <div class="location-register__description" v-if="step === 1">
+      Чтобы принять участие в Дне физики вам необходимо заполнить эту форму
+    </div>
+    <div class="location-register__type" v-if="form_type">
+      {{ form_type === 'teacher' ? 'Для учителей' : 'Для учеников' }}
+    </div>
+    <register-form v-if="step === 1" @goSecondStep="goSecondStep"/>
+    <teacher-register v-if="step === 2 && form_type === 'teacher'"/>
+    <student-register v-if="step === 2 && form_type === 'student'"/>
   </div>
 </template>
 <script lang="ts">
-import {Component, Vue} from "nuxt-property-decorator";
-import RegisterForm from "./components/RegisterForm.vue";
+import {Component, Vue} from 'nuxt-property-decorator';
+import RegisterForm from './components/RegisterForm.vue';
+import TeacherRegister from './components/TeacherRegister.vue';
+import StudentRegister from './components/StudentRegister.vue';
+
 @Component({
   components: {
-    RegisterForm
+    RegisterForm,
+    TeacherRegister,
+    StudentRegister
   }
 })
 export default class LocationRegister extends Vue {
+  step = 1;
+  form_type = '';
 
+  goSecondStep(form_type) {
+    this.form_type = form_type;
+    this.step = 2;
+  }
 }
 </script>
 

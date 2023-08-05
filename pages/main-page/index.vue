@@ -33,6 +33,27 @@ export default class MainPage extends Vue {
   @Ref() mapSection;
   loading = true;
 
+  head() {
+    return {
+      title: 'Онлайн-школа Коалиция | Ваша образовательная траектория',
+      link: [
+        {
+          href: 'https://api-maps.yandex.ru',
+          rel: 'preconnect'
+        }
+      ],
+      script: [
+        {
+          src: `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e5866d5b-d165-405a-9769-3ba923468315`,
+          type: `text/javascript`,
+          id: 'yandex',
+          async: true,
+          defer: true
+        },
+      ],
+    };
+  }
+
   clickOnCity({city}) {
     this.$vuetify.goTo('#map-section');
     this.$router.replace({

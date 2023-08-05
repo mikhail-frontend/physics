@@ -211,7 +211,7 @@ export default class RegisterForm extends Vue {
           hasError, formModel: this.formModel
         }
     );
-    this.$emit('goSecondStep', 'teacher')
+    this.$emit('goSecondStep', this.formModel.status.value)
   }
 }
 </script>
