@@ -8,16 +8,22 @@
       Всероссийский день физики
     </nuxt-link>
 
+    <h1 class="location-register__title">Регистрация</h1>
+    <div class="location-register__description">Чтобы принять участие в Дне физики вам необходимо заполнить эту форму</div>
+    <register-form/>
+
   </div>
 </template>
 <script lang="ts">
 import {Component, Vue} from "nuxt-property-decorator";
-
-@Component
-export default class LocationRegister extends Vue {
-  mounted() {
-    console.log(this.$route.name)
+import RegisterForm from "./components/RegisterForm.vue";
+@Component({
+  components: {
+    RegisterForm
   }
+})
+export default class LocationRegister extends Vue {
+
 }
 </script>
 

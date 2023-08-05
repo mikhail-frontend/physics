@@ -1,3 +1,30 @@
 .location-register{
+  padding-top: 80px;
+  padding-bottom: 164px;
   position: relative;
+}
+
+.location-register__title{
+  color: #0D1834;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.76px;
+  margin-bottom: 13px;
+  @media (max-width: 600px) {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: -0.6px;
+  }
+}
+
+.location-register__description{
+  color: #0D1834;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -0.32px;
 }

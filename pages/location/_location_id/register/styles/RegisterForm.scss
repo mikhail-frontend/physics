@@ -1,0 +1,155 @@
+.physics-register{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  margin-top: 71px;
+  width: 100%;
+  max-width: 855px;
+  @media (max-width: 1100px) {
+    margin-top: 56px;
+  }
+}
+
+.physics-register__line{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+  width: 100%;
+  &.physics-register__line_triple{
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 720px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &.physics-register__line_double{
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.physics-register__control{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+  position: relative;
+  &.physics-register__control_error{
+    .physics-control__input{
+      border-color: red;
+    }
+  }
+}
+
+.physics-control__title{
+  color: #0D1834;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.physics-control__error{
+  font-size: 10px;
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  color: red;
+}
+
+.physics-control__tmp, .physics-control__input{
+  border-radius: 7px;
+  border: 1px solid #E1DEE6;
+  background: #FFF;
+  display: flex;
+  padding: 6px 20px 6px 14px;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  height: 44px;
+  font-size: 15px;
+  color: #000;
+  transition: .3s ease;
+  &:focus{
+    border-color: #735CFF;
+  }
+  &::placeholder{
+    color: #B1B1B1;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+}
+
+.physics-register__accept {
+  display: none;
+
+  &+label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #0D1834;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    user-select: none;
+    &:before{
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      border-radius: 5.647px;
+      border: 1.412px solid #E1DEE6;
+      background: #FFF;
+      margin-right: 15px;
+    }
+  }
+
+  &:checked {
+    &+label {
+      &:before{
+        background-color: #735CFF;
+      }
+    }
+  }
+}
+
+.physics-register__rules{
+  position: relative;
+}
+
+.physics-register__rules_error.physics-register__rules{
+  label {
+    color: red;;
+  }
+  .physics-control__error{
+    bottom: -10px;
+  }
+}
+
+.physics-register__submit{
+  min-width: 240px;
+  height: 49px;
+  flex-shrink: 0;
+  color: #FFF;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144%;
+  padding: 12px 94px;
+  cursor: pointer;
+  display: block;
+  transition: .3s ease;
+  border-radius: 12px;
+  background: #735CFF;
+  &:hover{
+    transform: scale(1.03);
+  }
+}
