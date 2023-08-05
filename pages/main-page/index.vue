@@ -16,7 +16,6 @@ import SpeakersSection from "./components/SpeakersSection.vue";
 import ProgramSection from "./components/ProgramSection.vue";
 import MapSection from "./components/MapSection.vue";
 import RegisterBanner from "./components/RegisterBanner.vue";
-import * as process from "process";
 
 const PhysicsNamespace = namespace('physics')
 @Component({

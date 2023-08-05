@@ -1,0 +1,46 @@
+.physics-register .physics-register__line .physics-control__autocomplete.v-input{
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  height: 44px;
+  max-height: 44px;
+  padding: 0;
+  &.physics-control__autocomplete_error{
+    .v-input__control > .v-input__slot {
+      border-color: red;
+    }
+  }
+  * {
+    box-shadow: none !important;
+  }
+  .v-input__control > .v-input__slot {
+    padding: 6px 20px 6px 14px;
+    border: 1px solid #E1DEE6;
+    background: #FFF !important;
+    border-radius: 7px;
+    min-height: 44px;
+    height: inherit;
+    max-height: inherit;
+    box-shadow: none;
+  }
+
+  fieldset{
+    box-shadow: none;
+    color: transparent !important;
+  }
+  .v-input__append-inner{
+    margin-top: 4px;
+  }
+  .v-icon{
+    font-size: 0;
+    width: 12px;
+    height: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6.17019 5.82986L1.34033 1' stroke='%23605E6C' stroke-width='1.9931' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+}

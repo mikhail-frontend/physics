@@ -3,7 +3,22 @@
     <div class="physics-register__line">
       <div class="physics-register__control">
         <div class="physics-control__title">Ваш статус</div>
-        <div class="physics-control__tmp"></div>
+        <v-autocomplete v-model="formModel.status.value"
+                        :items="statuses"
+                        item-text="text"
+                        item-value="value"
+                        outlined
+                        :height="44"
+                        filled
+                        placeholder="Выберите статус"
+                        hide-details
+                        class="physics-control__autocomplete"
+                        :class="{
+                          'physics-control__autocomplete_error': formModel.status.error
+                        }"
+                        @change="blurInput('status')"
+        />
+        <div class="physics-control__error" v-if="formModel.status.error">{{ formModel.status.error }}</div>
       </div>
     </div>
     <div class="physics-register__line physics-register__line_triple">
@@ -60,7 +75,22 @@
       </div>
       <div class="physics-register__control">
         <div class="physics-control__title">Город, на площадку в котором вы хотели бы прийти</div>
-        <div class="physics-control__tmp"></div>
+        <v-autocomplete v-model="formModel.city.value"
+                        :items="cities"
+                        item-text="title"
+                        item-value="id"
+                        outlined
+                        :height="44"
+                        filled
+                        placeholder="Выберите город"
+                        hide-details
+                        class="physics-control__autocomplete"
+                        :class="{
+                          'physics-control__autocomplete_error': formModel.city.error
+                        }"
+                        @change="blurInput('city')"
+        />
+        <div class="physics-control__error" v-if="formModel.city.error">{{ formModel.city.error }}</div>
       </div>
     </div>
     <div class="physics-register__rules" :class="{'physics-register__rules_error': formModel.accept_rules.error}">
@@ -82,10 +112,25 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "nuxt-property-decorator";
+import {Component, namespace, Vue} from "nuxt-property-decorator";
 import {emailRules, requiredRules} from "~/helpers/inputRules";
+const PhysicsNamespace = namespace('physics')
+
 @Component
 export default class RegisterForm extends Vue {
+  loading = true;
+  @PhysicsNamespace.Action('getUniversities') getUniversities;
+
+  statuses = [
+    {
+      value: 'teacher',
+      text: 'Учитель'
+    },
+    {
+      value: 'student',
+      text: 'Ученик'
+    },
+  ]
 
   formModel = {
     accept_rules: {
@@ -117,30 +162,62 @@ export default class RegisterForm extends Vue {
       touched: false,
       rules: emailRules,
       error: '',
+    },
+    status: {
+      value: 'teacher',
+      touched: false,
+      rules: requiredRules,
+      error: '',
+    },
+    city: {
+      value: '',
+      touched: false,
+      rules: requiredRules,
+      error: '',
     }
 
   }
 
+  cities = [];
+
   blurInput(inputName) {
     const input = this.formModel[inputName];
-    if(!input) return;
+    if (!input) return;
     const {rules, value} = input;
     let error = '';
     rules.forEach(rule => {
-     const result = rule(value);
-     if(typeof result === 'string') {
-       error = result;
-       return
-     }
+      const result = rule(value);
+      if (typeof result === 'string') {
+        error = result;
+        return
+      }
     });
     this.$set(input, 'error', error);
   }
 
-  submitRegister() {
+  async mounted() {
+    this.loading = true;
+    const cities = await this.getUniversities();
+    this.cities = cities;
+    this.loading = false;
 
+  }
+  submitRegister() {
+    const formKeys = Object.keys(this.formModel);
+    formKeys.forEach(key => this.blurInput(key));
+    const hasError =  Object.values(this.formModel).some(({error}) => error);
+    console.log(
+        {
+          hasError, formModel: this.formModel
+        }
+    );
+    this.$emit('goSecondStep', 'teacher')
   }
 }
 </script>
 <style lang="scss" scoped>
 @import "../styles/RegisterForm";
+</style>
+<style lang="scss">
+@import "../styles/AutocompleteStyling";
 </style>
