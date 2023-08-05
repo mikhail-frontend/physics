@@ -106,6 +106,7 @@ export default class TeacherRegister extends Vue {
           hasError, formModel: this.formModel
         }
     );
+    if(hasError) return;
     this.$emit('filledForm')
   }
 }

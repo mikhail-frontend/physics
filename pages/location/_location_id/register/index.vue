@@ -16,8 +16,25 @@
       {{ form_type === 'teacher' ? 'Для учителей' : 'Для учеников' }}
     </div>
     <register-form v-if="step === 1" @goSecondStep="goSecondStep"/>
-    <teacher-register v-if="step === 2 && form_type === 'teacher'"/>
-    <student-register v-if="step === 2 && form_type === 'student'"/>
+    <teacher-register @filledForm="isModal = true" v-if="step === 2 && form_type === 'teacher'"/>
+    <student-register @filledForm="isModal = true" v-if="step === 2 && form_type === 'student'"/>
+
+    <v-dialog v-model="isModal" max-width="576" content-class="location-register__dialog">
+      <div class="location-register__success">
+        <div class="location-register__close" v-ripple @click="closeModal"/>
+        <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="45" cy="45" r="45" fill="#F1EFFF"/>
+          <path d="M33 50.4189L42.7297 56.5L58.5405 34" stroke="#735CFF" stroke-width="3.64865" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="register-success__title">Спасибо за регистрацию</div>
+        <div class="register-success__description">
+          Наш робот отправил вам на почту приветственное письмо. Наши письма иногда могут попадать в “Спам” или “Промоакции”, не забудьте и их тоже проверить.
+          <br/>      <br/>
+          До встречи 17 сентбября!
+        </div>
+        <button v-ripple class="location-register__button" @click="closeModal">Закрыть</button>
+      </div>
+    </v-dialog>
   </div>
 </template>
 <script lang="ts">
@@ -36,10 +53,15 @@ import StudentRegister from './components/StudentRegister.vue';
 export default class LocationRegister extends Vue {
   step = 1;
   form_type = '';
+  isModal = false;
 
   goSecondStep(form_type) {
     this.form_type = form_type;
     this.step = 2;
+  }
+
+  closeModal() {
+    this.isModal = false
   }
 }
 </script>

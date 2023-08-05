@@ -211,7 +211,9 @@ export default class RegisterForm extends Vue {
           hasError, formModel: this.formModel
         }
     );
-    this.$emit('goSecondStep', this.formModel.status.value)
+    setTimeout(() => {
+      this.$emit('goSecondStep', this.formModel.status.value)
+    }, 1000)
   }
 }
 </script>

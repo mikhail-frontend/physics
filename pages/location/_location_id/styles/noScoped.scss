@@ -26,7 +26,6 @@
 }
 
 .location-page__button{
-
   width: 240px;
   height: 49px;
   flex-shrink: 0;
@@ -45,5 +44,18 @@
 
   &:hover {
     transform: scale(1.03);
+  }
+}
+
+.location-register__dialog{
+  border-radius: 12px;
+  background: #FFF;
+  @media (max-width: 600px) {
+    width: calc(100vw - 24px);
+    left: 12px;
+    position: absolute;
+    top: 56px;
+    padding: 0;
+    margin: 0;
   }
 }

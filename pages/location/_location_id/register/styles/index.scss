@@ -37,3 +37,91 @@
   line-height: 27px;
   letter-spacing: -0.32px;
 }
+
+.location-register__success{
+  background-color: #fff;
+  display: flex;
+  padding: 69px 12px 32px 12px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  @media (max-width: 600px) {
+    padding-left: 24px;
+    padding-right: 28px;
+  }
+}
+
+.register-success__title{
+  color: #0D1834;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.54px;
+  text-align: left;
+  max-width: 480px;
+  width: 100%;
+  margin: 31px auto 10px ;
+  @media (max-width: 600px) {
+    font-size: 24px;
+    line-height: 48px;
+    letter-spacing: -0.48px;
+  }
+}
+
+.register-success__description{
+  color: #0D1834;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  margin-bottom: 32px;
+  letter-spacing: -0.3px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-register__button{
+  color: #FFF;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144%;
+  width: 138px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #735CFF;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+
+  transition: .3s ease;
+  margin-right: 30px;
+  &:hover{
+    transform: scale(1.03);
+  }
+}
+
+
+.location-register__close {
+  width: 44px;
+  height: 43px;
+  background-image: url("data:image/svg+xml,%3Csvg width='44' height='43' viewBox='0 0 44 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4.73389' y='4.2334' width='34.5323' height='34.5323' rx='17.2662' fill='%23E0E4F2' fill-opacity='0.6'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.6582 17.1574C17.9553 16.8603 18.437 16.8603 18.7341 17.1574L22 20.4233L25.2659 17.1574C25.563 16.8603 26.0447 16.8603 26.3418 17.1574C26.6389 17.4545 26.6389 17.9362 26.3418 18.2333L23.0759 21.4992L26.3418 24.7651C26.6389 25.0622 26.6389 25.5439 26.3418 25.841C26.0447 26.1381 25.563 26.1381 25.2659 25.841L22 22.5751L18.7341 25.841C18.437 26.1381 17.9553 26.1381 17.6582 25.841C17.3612 25.5439 17.3612 25.0622 17.6582 24.7651L20.9242 21.4992L17.6582 18.2333C17.3612 17.9362 17.3612 17.4545 17.6582 17.1574Z' fill='%23171D32'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 16px;
+  right: 20px;
+  position: absolute;
+  cursor: pointer;
+  transition: .3s ease;
+  border-radius: 50%;
+  &:hover{
+    transform: scale(1.03);
+  }
+}
