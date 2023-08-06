@@ -1,12 +1,12 @@
 <template>
   <div class="physics-container location-register">
-    <nuxt-link to="/" class="location-page__back">
+    <a href="/" class="location-page__back">
       <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M5.83008 10.6597L1.00022 5.82986L5.83008 1" stroke="#605E6C" stroke-width="1.9931"
               stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       Всероссийский день физики
-    </nuxt-link>
+    </a>
 
     <h1 class="location-register__title">Регистрация</h1>
     <div class="location-register__description" v-if="step === 1">

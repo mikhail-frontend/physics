@@ -1,12 +1,12 @@
 <template>
   <div class="physics-container location-page">
-    <nuxt-link to="/" class="location-page__back">
+    <a href="/" class="location-page__back">
       <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M5.83008 10.6597L1.00022 5.82986L5.83008 1" stroke="#605E6C" stroke-width="1.9931"
               stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       Всероссийский день физики
-    </nuxt-link>
+    </a>
     <main class="location-page__main">
       <div class="location-page__content">
         <h1 class="location-page__title">
@@ -28,7 +28,7 @@
           <div class="location-page__info-description">
             Олимпийский проспект, д.11 стр. 1, вход с остановки <br/>
             <nuxt-link :to="{
-                name: 'main-page',
+                name: 'index',
                 query: {
                   coords: JSON.stringify([lat, lon])
                 }

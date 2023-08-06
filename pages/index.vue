@@ -4,7 +4,7 @@
     <about-section/>
     <speakers-section/>
     <program-section/>
-    <map-section ref="mapSection"/>
+    <map-section v-if="!loading" ref="mapSection"/>
     <register-banner/>
   </main>
 </template>

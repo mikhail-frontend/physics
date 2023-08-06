@@ -26,7 +26,6 @@ export default class MapSection extends Vue {
   @Ref() map;
 
   openBalloon(coords) {
-    console.log(234)
     this.map.openBalloonWithCoords(JSON.parse(coords))
   }
 }

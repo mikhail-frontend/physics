@@ -20,16 +20,14 @@
 <script lang="ts">
 import {Component, namespace, Ref, Vue, Watch} from "nuxt-property-decorator";
 import {nanoid} from "nanoid";
-import citiesWithUniversities from '../entities/universities'
 
-// const PhysicsNamespace = namespace('physics')
+const PhysicsNamespace = namespace('physics')
 
 
 @Component
 export default class CitiesLine extends Vue {
   @Ref() ticker: HTMLElement;
-  citiesWithUniversities = citiesWithUniversities;
-  // @PhysicsNamespace.State('citiesWithUniversities') citiesWithUniversities
+  @PhysicsNamespace.State('citiesWithUniversities') citiesWithUniversities
   cities = [];
   duration = 40000;
   isInitialized = false;
@@ -47,11 +45,12 @@ export default class CitiesLine extends Vue {
       usedIds.add(randomId);
       const newItem = {
         id: randomId,
-        title: inputArray[i % inputArray.length].title,
-        link: `/location/${inputArray[i % inputArray.length].id}`,
-        city: inputArray[i % inputArray.length]
+        title: inputArray[i % inputArray.length]?.title,
+        link: `/location/${inputArray[i % inputArray.length]?.id}`,
+        city: inputArray[i % inputArray?.length]
       };
-      resultArray.push(newItem);
+      if(newItem && Object.values(newItem).every(val => val)) resultArray.push(newItem);
+
     }
     return resultArray;
   }
