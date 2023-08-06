@@ -1,6 +1,6 @@
 import {mixinMutations} from '~/store/mixins';
 import axios from "axios";
-import universities from "~/pages/main-page/entities/universities";
+import universities from "~/pages/entities/universities";
 
 
 export const state = () => ({

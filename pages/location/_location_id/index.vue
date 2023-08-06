@@ -1,6 +1,6 @@
 <template>
   <div class="physics-container location-page">
-    <nuxt-link to="/main-page" class="location-page__back">
+    <nuxt-link to="/" class="location-page__back">
       <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M5.83008 10.6597L1.00022 5.82986L5.83008 1" stroke="#605E6C" stroke-width="1.9931"
               stroke-linecap="round" stroke-linejoin="round"/>

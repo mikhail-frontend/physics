@@ -36,6 +36,6 @@ export default class AppLayout extends Vue {
 </script>
 
 <style lang="scss">
-@import "../pages/main-page/styles/noScoped";
+@import "../pages/styles/noScoped";
 </style>
 
