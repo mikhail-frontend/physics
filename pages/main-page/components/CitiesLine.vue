@@ -20,14 +20,16 @@
 <script lang="ts">
 import {Component, namespace, Ref, Vue, Watch} from "nuxt-property-decorator";
 import {nanoid} from "nanoid";
+import citiesWithUniversities from '../entities/universities'
 
-const PhysicsNamespace = namespace('physics')
+// const PhysicsNamespace = namespace('physics')
 
 
 @Component
 export default class CitiesLine extends Vue {
   @Ref() ticker: HTMLElement;
-  @PhysicsNamespace.State('citiesWithUniversities') citiesWithUniversities
+  citiesWithUniversities = citiesWithUniversities;
+  // @PhysicsNamespace.State('citiesWithUniversities') citiesWithUniversities
   cities = [];
   duration = 40000;
   isInitialized = false;
@@ -108,6 +110,7 @@ export default class CitiesLine extends Vue {
   }
 
   mounted() {
+    this.onCitiesChange(this.citiesWithUniversities)
     document.addEventListener('click', this.vanillaClickEvent, {passive: true})
   }
 

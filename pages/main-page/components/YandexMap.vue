@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!loading" class="yandex-map">
+  <div  class="yandex-map">
     <svg class="toggle-map" v-if="isListOpen"
          @click="isListOpen = !isListOpen"
          width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,12 +40,12 @@
 <script lang="ts">
 import {Component, Vue, namespace, Watch} from "nuxt-property-decorator";
 
+import citiesWithUniversities from '../entities/universities'
 
 const PhysicsNamespace = namespace('physics')
 @Component
 export default class YandexMap extends Vue {
-
-  @PhysicsNamespace.State('citiesWithUniversities') citiesWithUniversities;
+  citiesWithUniversities = citiesWithUniversities;
 
   loading = true;
   checked_city = 0;
@@ -136,6 +136,7 @@ export default class YandexMap extends Vue {
   checkCity(city) {
     const {yandexMap} = this;
     if (!yandexMap || !city || !city.city_coords) return;
+    this.yandexMap.destroy()
     this.loading = true;
     this.$nextTick(() => {
       this.loading = false;
